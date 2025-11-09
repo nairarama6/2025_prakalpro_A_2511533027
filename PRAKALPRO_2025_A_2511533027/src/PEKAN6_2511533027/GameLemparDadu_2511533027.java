@@ -1,9 +1,9 @@
 package PEKAN6_2511533027;
 
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
 
-public class GameLemparDadu {
+public class GameLemparDadu_2511533027 {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner (System.in);
