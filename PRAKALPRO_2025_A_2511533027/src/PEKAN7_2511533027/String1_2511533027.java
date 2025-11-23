@@ -1,0 +1,13 @@
+package PEKAN7_2511533027;
+
+public class String1_2511533027 {
+
+	public static void main(String[] args) {
+		String salam= "Assalamualaikum";
+		System.out.println("panjang salam adalah : "+salam.length());
+		System.out.println(salam.toUpperCase()); //Outputs "ASSALAMUALAIKUM"
+		System.out.println(salam.toLowerCase()); //outputsnya ga kapital
+		System.out.println(salam.indexOf("salam")); //outputs 2
+	}
+
+}
