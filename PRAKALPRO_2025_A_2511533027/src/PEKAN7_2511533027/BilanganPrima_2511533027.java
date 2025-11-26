@@ -22,6 +22,7 @@ public class BilanganPrima_2511533027 {
 			System.out.println(a+" bilangan prima");
 		}else
 			System.out.println(a+" bukan bilangan prima");
+		input.close();
 	}
 
 }

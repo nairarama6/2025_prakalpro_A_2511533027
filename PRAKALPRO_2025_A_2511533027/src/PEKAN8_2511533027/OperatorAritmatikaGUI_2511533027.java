@@ -1,8 +1,6 @@
 package PEKAN8_2511533027;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -18,6 +16,7 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 public class OperatorAritmatikaGUI_2511533027 extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -76,7 +75,7 @@ public class OperatorAritmatikaGUI_2511533027 extends JFrame {
 		contentPane.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Operator");
-		lblNewLabel_1_2.setBounds(10, 74, 71, 14);
+		lblNewLabel_1_2.setBounds(10, 123, 71, 14);
 		contentPane.add(lblNewLabel_1_2);
 		
 		JLabel lblNewLabel_1_3 = new JLabel("Hasil");
@@ -106,8 +105,8 @@ public class OperatorAritmatikaGUI_2511533027 extends JFrame {
 		contentPane.add(txtHasil);
 		txtHasil.setColumns(10);
 		
-		JComboBox cbOperator = new JComboBox();
-		cbOperator.setModel(new DefaultComboBoxModel(new String[] {"+", "-", "*", "/", "%"}));
+		JComboBox<String> cbOperator = new JComboBox<>();
+		cbOperator.setModel(new DefaultComboBoxModel<String>(new String[] {"+", "-", "*", "/", "%"}));
 		cbOperator.setBackground(new Color(64, 128, 128));
 		cbOperator.setBounds(140, 120, 84, 22);
 		contentPane.add(cbOperator);

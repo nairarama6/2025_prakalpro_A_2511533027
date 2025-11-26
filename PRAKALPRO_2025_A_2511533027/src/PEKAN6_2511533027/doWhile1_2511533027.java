@@ -10,5 +10,6 @@ public class doWhile1_2511533027 {
 			System.out.print("Input Password: ");
 			phrase = console.next();
 		} while (!phrase.equals("abcd"));
+		console.close();
 	}
 }

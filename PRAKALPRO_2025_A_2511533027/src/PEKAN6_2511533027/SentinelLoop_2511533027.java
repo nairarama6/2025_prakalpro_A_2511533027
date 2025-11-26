@@ -14,5 +14,6 @@ public class SentinelLoop_2511533027 {
 			sum = sum + number;
 		}
 		System.out.println("totalnya adalah " + sum);
+		console.close();
 	}
 }

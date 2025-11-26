@@ -24,6 +24,7 @@ public class String2_2511533027 {
 		System.out.println("String a + string b = " +c);
 		String v= a+y;
 		System.out.println("String a + integer y = "+v);
+		input.close();
 	}
 
 }
