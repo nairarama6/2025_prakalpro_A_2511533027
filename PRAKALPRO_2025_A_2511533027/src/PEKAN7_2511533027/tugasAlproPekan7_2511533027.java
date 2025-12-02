@@ -9,47 +9,45 @@ public class tugasAlproPekan7_2511533027 {
 		Akun akun = new Akun();
 		System.out.println("=== SISTEM REGISTRASI AKUN ===");
 		System.out.print("Username: ");
-		String username = input.nextLine();
+		akun.setUsername(input.nextLine());
 		System.out.print("Password: ");
-		String password = input.nextLine();
+		akun.setPassword(input.nextLine());
 		System.out.print("Email: ");
-		String email = input.nextLine();
+		akun.setEmail(input.nextLine());
 		System.out.print("PIN Angka (6 digit): ");
-		int pin = input.nextInt();
+		akun.setPinAngka(input.nextInt());
+		input.nextLine();
 		
-		akun.setUsername(username);
-		akun.setPassword(password);
-		akun.setEmail(email);
-		akun.setPinAngka(pin);
+		System.out.println();
 		
-		// Validasi Password
-		if (!akun.isPasswordValid()) {
-			System.out.println("\n[ERROR] Password tidal valid! Minimal 8 karakter.");
-			input.close();
-			return;
+		if (!akun.isPasswordValid() || !akun.isEmailValid()) {
+			System.out.println("----- REGISTRASI GAGAL -----");
+			if (!akun.isPasswordValid()) {
+				System.out.println("Error: Password harus memiliki panjang minimal 8 karakter.");
+			}
+			if (!akun.isEmailValid()) {
+				System.out.println("Error: Email harus mengandung karakter '@'  dan '.'.");
+			}
+		} else {
+			System.out.println("----- REGISTRASI BERHASIL -----");
+			System.out.println("Akun untuk \"" + akun.getUsername() + "\" telah berhasil dibuat. \n");
+			
+			String usernameLower = akun.getUsername().toLowerCase();
+			String emailUpper = akun.getEmail().toUpperCase();
+			String idPengguna = akun.getUsername().concat(String.valueOf(akun.getPinAngka()));
+			
+			System.out.println("----- DETAIL AKUN -----");
+			System.out.println("Username (Lowercase)   : " + usernameLower);
+			System.out.println("Email (Uppercase)      : " + emailUpper);
+			System.out.println("ID Pengguna (Gabungan) : " + idPengguna);
+			
+			System.out.println();
+			System.out.println("----- UJI TIPE DATA (PIN ANDA: " + akun.getPinAngka() + ") -----");
+			System.out.println("PIN (int) + 10          = " + (akun.getPinAngka() + 10));
+			System.out.println("PIN (String) + \"10\"   = " + (String.valueOf(akun.getPinAngka()) + "10"));
 		}
-		
-		// Validasi Email
-		if (!akun.isEmailValid()) {
-			System.out.println("\n[ERROR] Email tidal valid! Harus mengandung '@' dan '.'");
-			input.close();
-			return;
-		}
-		
-		System.out.println("\n--- REGISTRASI BERHASIL ---");
-		System.out.println("Username : " + akun.getUsername());
-		System.out.println("Email    : " + akun.getEmail());
-		System.out.println("PIN      : " + akun.getPinAngka());
-		
-		// Manipulasi String 
-		System.out.println("\n-- Manipulasi String --");
-		System.out.println("Username Uppercase   : " + akun.getUsername().toUpperCase());
-		System.out.println("Email Lowercase      : " + akun.getEmail().toLowerCase());
-		System.out.println("Panjang Username     : " + akun.getUsername().length());
-		System.out.println("Index '@' pada Email : " +  akun.getEmail().indexOf("@"));
 		
 		input.close();
-
 	}
-
+	
 }
